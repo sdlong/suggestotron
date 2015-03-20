@@ -27,4 +27,6 @@
 
 <%= link_to 'New Topic', new_topic_path %>
 
-<%= will_paginate @topics %>
+<br>
+
+<%= will_paginate @topics, renderer: BootstrapPagination::Rails %>
