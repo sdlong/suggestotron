@@ -17,7 +17,10 @@
         <td><%= pluralize(topic.votes.count, "vote") %></td>
         <td><%= button_to '+1', upvote_topic_path(topic), class: "btn btn-sm btn-primary", method: :post %></td>
         <td><%= button_to '-1', downvote_topic_path(topic), class: "btn btn-sm btn-warning", method: :post %></td>
-        <td><%= link_to 'Dalete', topic, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to topic, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <%= fa_icon "trash-o", class: "btn btn-sm btn-danger" %>
+            <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
