@@ -2,7 +2,7 @@
 
 <h1>Listing Topics</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -15,9 +15,9 @@
       <tr>
         <td><%= link_to topic.title, topic %></td>
         <td><%= pluralize(topic.votes.count, "vote") %></td>
-        <td><%= button_to '+1', upvote_topic_path(topic), method: :post %></td>
-        <td><%= button_to '-1', downvote_topic_path(topic), method: :post %></td>
-        <td><%= link_to 'Dalete', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to '+1', upvote_topic_path(topic), class: "btn btn-sm btn-primary", method: :post %></td>
+        <td><%= button_to '-1', downvote_topic_path(topic), class: "btn btn-sm btn-warning", method: :post %></td>
+        <td><%= link_to 'Dalete', topic, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
